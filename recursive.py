@@ -3,6 +3,8 @@
 Created on Tue Mar  5 21:53:11 2019
 
 @author: sam
+Purpose: Recursive Function Python – Learn Python Recursion with Example
+https://www.simplifiedpython.net/recursive-function-python/
 """
 
 def fact(n):
