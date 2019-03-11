@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Mar  6 21:53:32 2019
-@author: sam
+http://www.jesshamrick.com/2011/05/18/an-introduction-to-classes-and-inheritance-in-python/
 """
 
 class Pet(object):
