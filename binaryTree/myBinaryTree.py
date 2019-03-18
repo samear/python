@@ -5,17 +5,26 @@ class Node(object):
         self.leaf = data
 
 def inOrder(root):
-    inOrder(root.left)
-    print(root.leaf)
-    inOrder(root.right)
+    if root:
+        inOrder(root.left)
+        print(root.leaf)
+        inOrder(root.right)
+    else:
+        print("tree doesn't exit")
 
 def preOrder(root):
-    print(root.leaf)
-    preOrder(root.left)
-    preOrder(root.right)
+    if root:
+        print(root.leaf)
+        preOrder(root.left)
+        preOrder(root.right)
+    else:
+        print("tree doesn't exit")
 
 def postOrder(root):
-    postOrder(root.left)
-    postOrder(root.right)
-    print(root.leaf)
+    if root:
+        postOrder(root.left)
+        postOrder(root.right)
+        print(root.leaf)
+    else:
+        print("tree doesn't exit")
 
