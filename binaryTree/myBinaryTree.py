@@ -18,3 +18,4 @@ def postOrder(root):
     postOrder(root.left)
     postOrder(root.right)
     print(root.leaf)
+
