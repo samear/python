@@ -15,21 +15,21 @@ class Node(object):
         self.data = data
 
 #inOrder traversal: visit left first, then root and then right.
-def inOrder(root):
+def inOrder(root): #L-Ro-R
     if root:
         inOrder(root.left)
         print(root.data)
         inOrder(root.right)
 
 #preOrder traversal: visit root first, then left then right
-def preOrder(root):
+def preOrder(root): #Ro - L - R
     if root:
         print(root.data)
         preOrder(root.left)
         preOrder(root.right)
 
 #postOrder traversal: visit left first then right, then root
-def postOrder(root):
+def postOrder(root): #L - R - Ro
     if root:
         postOrder(root.left)
         postOrder(root.right)
