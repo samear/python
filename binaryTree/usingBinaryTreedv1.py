@@ -1,7 +1,7 @@
 from binaryTreev1 import Node
 from binaryTreev1 import inOrder
 from binaryTreev1 import preOrder
-from binaryTree1 import postOrder
+from binaryTreev1 import postOrder
 
 root = Node(2)
 root.left = Node(4)
