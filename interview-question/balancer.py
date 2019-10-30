@@ -46,6 +46,6 @@ def balance(arr):
                 else:
                     print('Not valid')
 
-x = [']',')']
+x = ['{','}']
 
 balance(x)
