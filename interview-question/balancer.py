@@ -25,6 +25,8 @@ def balance(arr):
     pair2 = ['{', '}']
     pair3 = ['[', ']']
 
+    print('length:', len(arr))
+
     if arr[0] != pair1[0] or arr[0] != pair2[0] or arr[0] != pair3[0]:
 
         for i in range(len(arr)):
@@ -46,6 +48,6 @@ def balance(arr):
     else:
         print('Not valid')
 
-x = ['[',']','{','}','[','}']
+x = ['[',']']
 
 balance(x)
