@@ -1,0 +1,54 @@
+"""
+This is programing test for salesforce
+
+A string which contain only the characters '(', ')', '{','}', '[' and ']' is considered valid, if all
+the brackets are closed in the correct order.
+for example, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+Given an array of several string as the input, print "Valid" or "Not valid" on separate lines for each
+input string.
+If the input string contains any characters other than '(', ')', '{', '}', '[' and ']', then just
+print "Not valid". Empty string are always valid.
+Test cases:
+i/p -> Empty string: valid
+i/p -> (): valid
+i/p -> []: valid
+i/p -> (){}: valid
+i/p -> {]: Not valid
+i/p -> ([)]: Not valid
+i/p -> {([])}: valid
+i/p -> {[)}(]: not valid
+i/p -> ;{}: not valid
+"""
+def balance(arr):
+
+    pair1 = ['(', ')']
+    pair2 = ['{', '}']
+    pair3 = ['[', ']']
+
+    x = int(len(arr)/2)
+
+    print('length:', x)
+
+    for n in range(x):
+        if arr[x-1] == pair1[0] or arr[x-1] == pair2[0] or arr[x-1] == pair3[0]:
+            if arr[x-1] == pair1[0]:
+                if arr[x-1] == pair1[1]:
+                    print('Valid')
+                else:
+                    print('Not valid')
+            elif arr[x-1] == pair2[0]:
+                if arr[x-1] == pair2[1]:
+                    print('Valid')
+                else:
+                    print('Not valid')
+            elif arr[x-1] == pair3[0]:
+                if arr[x-1] == pair3[1]:
+                    print('Valid')
+                else:
+                    print('Not valid')
+        else:
+            print('Not valid')
+
+x = ['(','[','{','}',']',')']
+
+balance(x)
