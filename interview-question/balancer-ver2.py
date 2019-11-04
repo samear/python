@@ -25,30 +25,25 @@ def balance(arr):
     pair2 = ['{', '}']
     pair3 = ['[', ']']
 
+    #print('length of arr:', len(arr))
     x = int(len(arr)/2)
 
-    print('length:', x)
+    #print('length:', x)
+    #print(arr[x])
 
     for n in range(x):
-        if arr[x-1] == pair1[0] or arr[x-1] == pair2[0] or arr[x-1] == pair3[0]:
-            if arr[x-1] == pair1[0]:
-                if arr[x-1] == pair1[1]:
-                    print('Valid')
-                else:
-                    print('Not valid')
-            elif arr[x-1] == pair2[0]:
-                if arr[x-1] == pair2[1]:
-                    print('Valid')
-                else:
-                    print('Not valid')
-            elif arr[x-1] == pair3[0]:
-                if arr[x-1] == pair3[1]:
-                    print('Valid')
-                else:
-                    print('Not valid')
+        #print(n)
+        print(x-1-n, '=', arr[x-1-n], end=' - ')
+        """
+        if arr[n-1] == pair1[0] or arr[n-1] == pair2[0] or arr[n-1] == pair3[0]:
+            if arr[n] == pair1[1]:
+                print('Valid')
+            else:
+                print('Not valid')
         else:
             print('Not valid')
+        """
 
-x = ['(','[','{','}',']',')']
+x = ['{','[','(',')',']','}']
 
 balance(x)
