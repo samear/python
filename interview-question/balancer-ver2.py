@@ -33,17 +33,19 @@ def balance(arr):
 
     for n in range(x):
         #print(n)
-        print(x-1-n, '=', arr[x-1-n], end=' - ')
-        """
-        if arr[n-1] == pair1[0] or arr[n-1] == pair2[0] or arr[n-1] == pair3[0]:
-            if arr[n] == pair1[1]:
+        #print(x-1-n, '=', arr[x-1-n], end=' - ') #print the first half of the array
+        #print(x+n, '=', arr[x+n], end=' - ') # print the second half of the array
+        
+        if arr[x-1-n] == pair1[0] or arr[x-1-n] == pair2[0] or arr[x-1-n] == pair3[0]:
+            print('Valid - [',x-1-n,']:',arr[x-1-n])
+            if arr[x+n] == pair1[1]:
                 print('Valid')
             else:
                 print('Not valid')
         else:
             print('Not valid')
-        """
+        
 
-x = ['{','[','(',')',']','}']
+x = ['(','{','[','(',')',']','}',')']
 
 balance(x)
