@@ -4,6 +4,11 @@
 import base64
 import random
 import time
+from timeit import default_timer as timer
+from datetime import timedelta
+
+#result_folder = '/Users/samear/apache-jmeter-5.1.1/projects/repo-man/data/'
+result_folder = '/home/samear/python/data/'
 
 # generate unique value. this value is used for repo:name
 def unique_value():
@@ -40,11 +45,11 @@ def record_assetName(name):
    
    f3.write(name +'\n')
 
+start = time.time()
 num_content = 10
-f1 = open('/Users/samear/apache-jmeter-5.1.1/projects/repo-man/data/assets' + '.txt', 'w')
-f2 = open('/Users/samear/apache-jmeter-5.1.1/projects/repo-man/data/renditions' + '.txt', 'w')
-f3 = open('/Users/samear/apache-jmeter-5.1.1/projects/repo-man/data/assetName' + '.txt', 'w')
-
+f1 = open(result_folder + 'assets' + '.txt', 'w')
+f2 = open(result_folder + 'renditions' + '.txt', 'w')
+f3 = open(result_folder + 'assetName' + '.txt', 'w')
 
 for n in range(num_content):
    assetName = str(unique_value())
@@ -66,3 +71,8 @@ for n in range(num_content):
 f1.close()
 f2.close()
 f3.close()
+
+end = time.time()
+#elapsed_time = time.process_time() - t
+print(timedelta(seconds=end-start))
+#print('Elapsed time:', elapsed_time)
