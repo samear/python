@@ -24,6 +24,7 @@ def balance(arr):
     pair1 = ['(', ')']
     pair2 = ['{', '}']
     pair3 = ['[', ']']
+    index = 1
 
     #print('length of arr:', len(arr))
     x = int(len(arr)/2)
@@ -37,22 +38,37 @@ def balance(arr):
         #print(x-1-n, '=', arr[x-1-n], end=' - ') #print the first half of the array
         #print(x+n, '=', arr[x+n], end=' - ') # print the second half of the array
         
-        if arr[x-1-n] == pair1[0] or arr[x-1-n] == pair2[0] or arr[x-1-n] == pair3[0]:
+        if arr[x-1-n] == pair1[0] and arr[x+n] == pair1[1]:
+            print('Valid a')
+        elif arr[x-1-n] == pair2[0] and arr[x+n] == pair2[1]:
+            print('Valid b')
+        elif arr[x-1-n] == pair3[0] and arr[x+n] == pair3[1]:
+            print('Valid c')
+        elif arr[n] == pair1[0] and arr[n+1] == pair1[1]:
+            print('Valid x')
+            index = index + 1
+        elif arr[n] == pair2[0] and arr[n+index] == pair2[1]:
+            print('Valid y')
+        elif arr[n] == pair3[0] and arr[n+index] == pair3[1]:
+            print('Valid z')
+        else:
+            print('Not valid')
+        
             #print('[',x-1-n,']:',arr[x-1-n], end='')
             #print(arr[x-1-n], end='')
-            #print(arr[x+n], end='')
-            if arr[x+n] == pair1[1] or arr[x+n] == pair2[1] or arr[x+n ]== pair3[1]:
-                print(arr[x-1-n], end='')
-                print(arr[x+n], end='')
-                print(' - Valid')
-                #pass
-            else:
-                print(' - Not valid')
-        else:
-            #print('Not valid')
-            pass
         
-
-x = ['{',']']
+x = ['[',']','{','}']
+"""
+Test cases:
+i/p -> Empty string: valid
+i/p -> (): valid
+i/p -> []: valid
+i/p -> (){}: valid
+i/p -> {]: Not valid
+i/p -> ([)]: Not valid
+i/p -> {([])}: valid
+i/p -> {[)}(]: not valid
+i/p -> ;{}: not valid
+"""
 
 balance(x)
