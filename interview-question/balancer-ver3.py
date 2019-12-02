@@ -79,11 +79,11 @@ def balance(arr):
         #print(arr[x-1-n], end='')
 
 def display_result(f):
-    if f == False:
-        print('Valid:', f)
+    if f == False and f == True:
+        print('Not valid - f =', f)
         exit
     else:
-        print('Valid:', f)
+        print('Valid - f =', f)
 
 #display_result(flag)
 
@@ -92,10 +92,10 @@ def display_result(f):
 #x = ['(',')'] # valid
 #x = ['[',']'] # valid
 #x = ['(',')','{','}'] # valid
-#x = ['{','}'] # not valid
+#x = ['{','}'] # valid
 #x = ['(','[',')',']'] # not valid
 #x = ['{','(','[',']',')','}'] # valid
-#x = ['{','[',')','}','(',']'] # not valid
-x = [';','{','}',':'] # not valid
+x = ['{','[',')','}','(',']'] # not valid
+#x=[';','{','}',':'] # not valid
 
 balance(x)
