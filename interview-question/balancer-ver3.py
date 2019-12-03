@@ -19,7 +19,7 @@ i/p -> {([])}: valid
 i/p -> {[)}(]: not valid
 i/p -> ;{}: not valid
 """
-flag = True
+flag = False
 
 def balance(arr):
 
@@ -28,6 +28,7 @@ def balance(arr):
     pair3 = ['[', ']']
     index1 = 0
     index2 = 1
+    false_count = 0
 
     #print('length of arr:', len(arr))
     x = int(len(arr)/2)
@@ -44,32 +45,34 @@ def balance(arr):
         if arr[x-1-n] == pair1[0] and arr[x+n] == pair1[1]:
             #print(arr[x-1-n] + arr[x+n], '- Valid a') # pair of ()
             flag = True
-            display_result(flag)
+            #display_result(flag, false_count)
         elif arr[x-1-n] == pair2[0] and arr[x+n] == pair2[1]: 
             #print(arr[x-1-n] + arr[x+n], '- Valid b') # pair of {}
             flag = True
-            display_result(flag)
+            #display_result(flag, false_count)
         elif arr[x-1-n] == pair3[0] and arr[x+n] == pair3[1]:
             #print(arr[x-1-n] + arr[x+n], '- Valid c') # pair of []
             flag = True
-            display_result(flag)
+            #display_result(flag, false_count)
 
         elif arr[n+index1] == pair1[0] and arr[n+index2] == pair1[1]:
             #print(arr[n+index1] + arr[n+index2], '- Valid x') # pair of ()
             flag = True
-            display_result(flag)
+            #display_result(flag, false_count)
         elif arr[n+index1] == pair2[0] and arr[n+index2] == pair2[1]:
-            print(arr[n+index1] + arr[n+index2], '- Valid y') # pair of {}
+            #print(arr[n+index1] + arr[n+index2], '- Valid y') # pair of {}
             flag = True
-            display_result(flag)
+            #display_result(flag, false_count)
         elif arr[n+index1] == pair3[0] and arr[n+index2] == pair3[1]:
             #print(arr[n+index1] + arr[n+index2], '- Valid z') # pair of []
             flag = True
-            display_result(flag)
+            #display_result(flag, false_count)
         else:
             #print('Not valid')
             flag = False
-            display_result(flag)
+            false_count = false_count + 1
+            #display_result(flag, false_count)
+            break
 
         index1 = index1 + 1
         index2 = index1 + 1
@@ -77,15 +80,19 @@ def balance(arr):
         #print('index2 =', index2)
         #print('[',x-1-n,']:',arr[x-1-n], end='')
         #print(arr[x-1-n], end='')
+    display_result(flag, false_count)
 
-def display_result(f):
-    if f == False and f == True:
+""" def display_result(f):
+    if f == False:
         print('Not valid - f =', f)
-        exit
     else:
-        print('Valid - f =', f)
+        print('Valid - f =', f) """
 
-#display_result(flag)
+def display_result(f, fc):
+    if fc == 0:
+        print('Valid - f =', f)
+    else:
+        print('Not valid - f =', f)
 
 # Test cases:
 #x = ['',''] # not valid
@@ -95,7 +102,7 @@ def display_result(f):
 #x = ['{','}'] # valid
 #x = ['(','[',')',']'] # not valid
 #x = ['{','(','[',']',')','}'] # valid
-x = ['{','[',')','}','(',']'] # not valid
-#x=[';','{','}',':'] # not valid
+#x = ['{','[',')','}','(',']'] # not valid
+x=[';','{','}',':'] # not valid
 
 balance(x)
