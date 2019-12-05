@@ -28,7 +28,6 @@ def balance(arr):
     pair3 = ['[', ']']
     index1 = 0
     index2 = 1
-    false_count = 0
 
     #print('length of arr:', len(arr))
     x = int(len(arr)/2)
@@ -70,7 +69,6 @@ def balance(arr):
         else:
             #print('Not valid')
             flag = False
-            false_count = false_count + 1
             #display_result(flag, false_count)
             break
 
@@ -80,19 +78,13 @@ def balance(arr):
         #print('index2 =', index2)
         #print('[',x-1-n,']:',arr[x-1-n], end='')
         #print(arr[x-1-n], end='')
-    display_result(flag, false_count)
+    display_result(flag)
 
-""" def display_result(f):
+def display_result(f):
     if f == False:
-        print('Not valid - f =', f)
+        print('Not valid.')
     else:
-        print('Valid - f =', f) """
-
-def display_result(f, fc):
-    if fc == 0:
-        print('Valid - f =', f)
-    else:
-        print('Not valid - f =', f)
+        print('Valid.')
 
 # Test cases:
 #x = ['',''] # not valid
@@ -103,6 +95,7 @@ def display_result(f, fc):
 #x = ['(','[',')',']'] # not valid
 #x = ['{','(','[',']',')','}'] # valid
 #x = ['{','[',')','}','(',']'] # not valid
-x=[';','{','}',':'] # not valid
+#x=[';','{','}',':'] # not valid
+x = ['{','(']
 
 balance(x)

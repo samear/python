@@ -12,15 +12,16 @@ Sample Output: 1
 """
 def pairs(sum, matrix):
     #print(sum, matrix)
-    count = 0
+    #count = 0
     #print('length', len(matrix))
-    #print(matrix[0][0]) = 1
+    #print(matrix[0][0]) #= 1
     #print(matrix[0][1]) = 0
-    #print(matrix[1][0]) = -1
-    #print(matrix[1][1]) = 2
+    #print(matrix[1][0]) #= -1
+    #print(matrix[1][1]) #= 2
+    print("====")
 
 
-    for i in range(len(matrix)):
+    """ for i in range(len(matrix)):
         for x in range(len(matrix) - 1):
             #print(matrix[x][i])
 
@@ -29,7 +30,15 @@ def pairs(sum, matrix):
             else:
                 print('No Output')
 
-    return count
+    return count """
+
+    for i in range(len(matrix)):
+        for n in range(len(matrix)):
+            print(matrix[i][n])
+            if matrix[i][n] + matrix[i][n]== sum:
+                print("sum =", sum)
+
+
 
 
 s = 3
